@@ -8,6 +8,10 @@ const Form = () => {
 
     const getCity = e => {
         e.preventDefault();
+        if (city.trim() === '') {
+            alert('Insert your location!');
+            return;
+        }
         dispatch(fetchWeather(city));
         setCity("");
     };
